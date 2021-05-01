@@ -4,7 +4,7 @@ const path = require('path');
 // const http = require('http');
 
 const server = express();
-const PORT = 3000;
+const PORT = 3005;
 
 // Routes
 server.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
