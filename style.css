@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  ol,
+  ul, 
+  li {
+    list-style: none;
+  }
+  
+  html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* body {
+      background: rgba(22, 22, 22, 0.884);      
+  } */
+
+
+ /*=================================================
+ 
+ ===================================================*/
+
+
+.navheader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: brown;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+   
+}
+
+.mainBody {
+
+    width:70%;
+    height: 70%;
+    margin-top: 5rem;
+    margin: 3rem;
+    padding: 2rem;
+    display: flex;
+    /* flex-wrap: wrap; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(206, 220, 247);
+}
