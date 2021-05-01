@@ -17,27 +17,27 @@
         <form class="ui form">
           <div class="field">
             <label>Name</label>
-            <input type="text" name="name" placeholder="Name" />
+            <input type="text" name="name" placeholder="Name" id="name"/>
           </div>
           <div class="field">
             <label>Phone Number</label>
-            <input type="text" name="phone-number" placeholder="Phone Number" />
+            <input type="text" name="phone-number" placeholder="Phone Number" id="phoneNumber"/>
           </div>
           <div class="field">
             <div class="field">
               <label>Email</label>
-              <input type="text" name="email" placeholder="Email" />
+              <input type="text" name="email" placeholder="Email" id="email" />
             </div>
             <div class="field">
               <label>ID</label>
-              <input type="text" name="id" placeholder="ID" />
+              <input type="text" name="id" placeholder="ID" id="id"/>
             </div>
             <div class="ui checkbox">
               <input type="checkbox" tabindex="0" class="hidden" />
               <label>I agree to the Terms and Conditions</label>
             </div>
           </div>
-          <button class="ui button" type="submit">Submit</button>
+          <button class="ui button" type="submit" id="submitBtn">Submit</button>
           <a href="/index" class="ui icon button">
             <i class="home icon"></i>
           </a>
@@ -52,5 +52,49 @@
         <a class="" href="#" target="_blank">Wait List</a>
       </footer>
       
+      <script type="text/javascript">
+    
+    const SubmitBtn = document.getElementById('submitBtn');
+      
+      // Question: What is "e" short for?
+      SubmitBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        // Question: What does this code do?
+        let name = document.getElementById('name').value.trim();
+        let phoneNumber = document.getElementById('phoneNumber').value.trim();
+        let email = document.getElementById('email').value.trim();
+        let id = document.getElementById('id').value.trim();
+        
+        let newBooking = {
+          name: name,
+          Number: parseInt(phoneNumber),
+          Email: email,
+          ID: parseInt(id),
+        };
+
+        // Question: What does this code do??
+        fetch('/api/table', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newBooking),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('table.html', data);
+            alert(`Adding Booking: ${data.name}`);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      });
+    
+    
+    
+    </script>
+
+
   </body>
 </html>
