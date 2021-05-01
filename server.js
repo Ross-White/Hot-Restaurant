@@ -6,20 +6,29 @@ const path = require('path');
 const server = express();
 const PORT = 3000;
 
+const tables = [
+  {
+    name: 'Ross',
+    time: '6pm',
+    groupSize: '4'
+  },
+];
+const waitlist = [
+  {
+    name: 'Wael',
+    time: '6pm',
+    groupSize: '4'
+  }
+];
+
 // Routes
 server.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
-
 server.get('/table', (req, res) => res.sendFile(path.join(__dirname, 'table.html')));
-
 server.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'reserve.html')));
 
-// const server = http.createServer((req, res) => {
-//     fs.readFile(`${__dirname}/index.html`, (err, data) => {
-//       if (err) throw err;
-//       res.writeHead(200, { 'Content-Type': 'text/html' });
-//       res.end(data);
-//     });
-//   });
+// API routes
+server.get('/api/table', (req, res) => res.json(tables));
+server.get('/api/waitlist', (req, res) => res.json(waitlist));
 
 
 
