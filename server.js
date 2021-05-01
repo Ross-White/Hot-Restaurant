@@ -1,19 +1,20 @@
 const express = require('express');
 const fs = require('fs');
-const http = require('http');
-// const server = express();
-const PORT = 3001;
+const path = require('path');
+// const http = require('http');
 
-const server = http.createServer((req, res) => {
-    // Here we use the fs package to read our index.html file
-    fs.readFile(`${__dirname}/index.html`, (err, data) => {
-      if (err) throw err;
-      // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
-      // an html file.
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end(data);
-    });
-  });
+const server = express();
+const PORT = 3000;
+
+server.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+
+// const server = http.createServer((req, res) => {
+//     fs.readFile(`${__dirname}/index.html`, (err, data) => {
+//       if (err) throw err;
+//       res.writeHead(200, { 'Content-Type': 'text/html' });
+//       res.end(data);
+//     });
+//   });
 
 
 
