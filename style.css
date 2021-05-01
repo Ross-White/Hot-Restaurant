@@ -46,16 +46,16 @@
 
 .mainBody {
 
-    width:70%;
-    height: 70%;
+    width: 90vw;
+    height: 60vh;
     margin-top: 5rem;
     margin: 3rem;
     padding: 2rem;
     display: flex;
-    /* flex-wrap: wrap; */
-    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background: rgb(206, 220, 247);
+    background: rgba(230, 230, 233, 0.705);
+    border-radius: 20px;
+  
 }
