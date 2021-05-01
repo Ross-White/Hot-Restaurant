@@ -81,11 +81,12 @@
           },
           body: JSON.stringify(newBooking),
         })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log('table.html', data);
-            alert(`Adding Booking: ${data.name}`);
-          })
+          .then((response) => console.log(response))
+          
+        //   .then((data) => {
+        //     console.log('table.html', data);
+        //     alert(`Adding Booking: ${data.name}`);
+        //   })
           .catch((error) => {
             console.error('Error:', error);
           });
